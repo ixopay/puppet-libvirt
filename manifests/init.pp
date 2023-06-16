@@ -127,7 +127,7 @@ class libvirt (
     package { $virtinst_package: ensure => installed }
   }
   if $qemu {
-    package { 'qemu-kvm': ensure => installed }
+    package { 'qemu-kvm': ensure => installed, allow_virtual => true }
     file { '/etc/sasl2/qemu-kvm.conf':
       owner   => 'root',
       group   => 'root',
