@@ -78,9 +78,6 @@ define libvirt::network (
   $ipv6               = undef,
   $mac                = undef,
 ) {
-  validate_bool ($autostart)
-  validate_re ($ensure, '^(present|defined|enabled|running|undefined|absent)$',
-    'Ensure must be one of defined (present), enabled (running), or undefined (absent).')
 
   include ::libvirt::params
 
